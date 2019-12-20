@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div th:if="${error}" th:text="${error}"/>
+        <div>
+            <h1>Login:</h1>
+            <form th:action="@{/login}" method="POST">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username"/>
+                <label>Password</label>
+                <input type="text" class="form-control" name="pw"/>
+                <Button type="submit"> Login </button>
+            </form>
+        </div>
+        <div>        
+            <h1>Or create a new account</h1>
+            <form th:action="@{/users}" method="POST">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username"/>
+                <label>Password</label>
+                <input type="text" class="form-control" name="pw"/>
+                <label>Credit card details: </label>
+                <input type="text" class="form-control" name="cardData"/>
+                <Button type="submit"> Login </button>
+            </form>
+        </div>
+    </body>
+</html>
