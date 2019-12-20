@@ -15,16 +15,15 @@ public class AccountDB {
             save("make", "salasana", "Credit card number: 987654321. Expiration date: 7/11");
         }
         if (!contains("admin")) {
-            save("admin", "password", "Credit card number: 123456789. Expiration date: 9/11");
+            save("admin", "password", "Credit card number: 123456789. Expiration date: 1/12");
         }
     }
 
     public Connection openConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:h2:file:./database", "sa", "");
+        return DriverManager.getConnection("jdbc:h2:file:./database;TRACE_LEVEL_FILE=0;TRACE_LEVEL_SYSTEM_OUT=0", "sa", "");
     }
 
     public ResultSet getResultSet(Connection c, String query) throws SQLException {
-        // query e.g. "SELECT * FROM Book"
         return c.createStatement().executeQuery(query);
     }
 
